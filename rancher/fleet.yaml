@@ -1,0 +1,15 @@
+defaultNamespace: cattle-system
+helm:
+  repo: https://releases.rancher.com/server-charts/latest
+  chart: rancher-latest/rancher
+  releaseName: rancher
+  values:
+    hostname: rancher.my.org
+    bootstrapPassword: admin
+    ingress:
+      tls:
+        source: letsEncrypt
+    letsEncrypt:
+      email: me@example.org
+      ingress:
+        class: nginx
